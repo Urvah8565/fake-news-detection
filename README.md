@@ -7,6 +7,9 @@ The system allows users to input a news article and predicts whether it is REAL 
 
 The application uses Streamlit for the frontend and Logistic Regression for classification.
 
+## Live Demo :
+https://fake-news-detection-h6yg8dcyttoyorj4whs8kg.streamlit.app/
+
 
 ## Dataset 
 
