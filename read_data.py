@@ -9,9 +9,10 @@ from sklearn.metrics import confusion_matrix
 # 2. Read CSV
 data = pd.read_csv("WELFake_Dataset.csv", encoding="utf-8")
 data = data.sample(n=20000, random_state=42)
-
 print("LABEL VALUES:")
 print(data['label'].value_counts())
+print(data['label'].unique())
+
 
 # 3. Clean labels
 data = data.dropna(subset=['label'])
@@ -53,12 +54,14 @@ print("Training shape:", X_train.shape)
 print("Testing shape:", X_test.shape)
 
 # 7. Train model
+
 model = LogisticRegression(
-    class_weight="balanced",
-    C=4.0,
+    C=1.0,
     max_iter=1000,
-    solver='saga'
+    solver='saga',
+    fit_intercept=False
 )
+
 
 model.fit(X_train, y_train)
 
